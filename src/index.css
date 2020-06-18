@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Satisfy&display=swap');
+:root {
+    --body-font: Lato, sans-serif;
+    --headings-font: Satisfy, sans-serif;
+    --primary-color: #62a5a1;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headings-font);
+    text-align: center;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#title {
+    margin: 0;
+}
+
+p {
+    text-align: justify;
+}
+
+#input-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-break {
+    flex-basis: 100%;
+    width: 0;
+    margin-bottom: 0.8em;
+}
+
+select, input:not([type='submit']) {
+    margin-left: 0.5em;
+}
+
+label:not(:first-of-type) {
+    margin-left: 1.5em;
+}
+
+#search-button {
+    width: min-content;
+    align-self: center;
+    font-size: large;
+    border: 0;
+    border-radius: 0.5em;
+    padding: 0.5em 0.75em;
+    background-color: var(--primary-color);
+    color: white;
+    transition: all 200ms ease;
+}
+
+#search-button:hover {
+    font-size: x-large;
+    background-color: rgba(98, 165, 161, 0.8);
+}
+
+section {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.algolia-places {
+    box-sizing: border-box;
+    width: max-content;
+}
+
+@media (max-width: 1080px) {
+    #input-form {
+        flex-direction: column;
+        align-items: initial;
+    }
+    input, select {
+        margin-top: 0.5em;
+    }
+    input {
+        margin-left: 0 !important;
+    }
+    select {
+        margin-left: 0 !important;
+    }
+    label {
+        margin-left: 0 !important;
+    }
+    label:not(:first-of-type) {
+        margin-top: 1em;
+    }
+    section {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
