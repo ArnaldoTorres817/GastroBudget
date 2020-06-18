@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 
-import InputForm from './Components/InputForm';
-import Header from './Components/Header'
-import AboutUs from './Components/AboutUs'
+import InputForm from './components/InputForm';
+import Header from './components/Header'
+import AboutUs from './components/AboutUs'
 
 function App() {
   return (
