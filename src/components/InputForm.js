@@ -4,9 +4,9 @@ import AlgoliaPlaces from 'algolia-places-react';
 const axios = require('axios');
 
 const InputForm = () => {
-    const { cuisine, setCuisine } = useState('pizza');
-    const { budget, setBudget } = useState(1);
-    const { location, setLocation } = useState();
+    const [ cuisine, setCuisine ] = useState('pizza');
+    const [ budget, setBudget ] = useState(1);
+    const [ location, setLocation ] = useState('United States');
 
     const searchOnYelpApi = e => {
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
@@ -14,9 +14,9 @@ const InputForm = () => {
                 Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
             },
             params: {
-                categories: `italian`,
-                price: 1,
-                location: 'Puerto Rico'
+                categories: cuisine,
+                price: budget,
+                location: location
             }
         })
             .then((res) => {
