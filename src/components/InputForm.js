@@ -3,7 +3,7 @@ import AlgoliaPlaces from 'algolia-places-react';
 
 
 const InputForm = () =>
-    <form id="input-form">
+    <div id="input-form">
         <label htmlFor="cuisine">Cuisine</label>
         <select name="cuisine" id="cuisine">
             <option value="pizza">Pizza</option>
@@ -12,9 +12,10 @@ const InputForm = () =>
         </select>
         <label htmlFor="budget">Budget</label>
         <select name="budget" id="budget">
-            <option value="$">Low</option>
-            <option value="$$">Medium</option>
-            <option value="$$$">High</option>
+            <option value="1">Low ($)</option>
+            <option value="2">Medium ($$)</option>
+            <option value="3">High ($$$)</option>
+            <option value="4">Expensive ($$$$)</option>
         </select>
         <label htmlFor="location-text">Location</label>
 
@@ -48,7 +49,29 @@ const InputForm = () =>
                 console.log('Fired when we could not make the request to Algolia Places servers for any reason but reaching your rate limit.')}
         />
         <div className="flex-break"></div>
-        <input type="submit" id="search-button" value="Search" />
-    </form>
+        {/* <input type="submit" id="search-button" value="Search"/> */}
+        <button id="search-button" onClick={searchButton}>Search</button>
+    </div>
 
+
+const axios = require('axios');
+const searchButton = (e) => {
+    
+    axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
+        headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
+        },
+        params: {
+            categories: 'restaurants, All',
+            location: 'Ponce, Puerto Rico',
+            price: 1
+        }
+    })
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log('error')
+        })
+}
 export default InputForm
