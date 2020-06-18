@@ -8,7 +8,7 @@ const AboutUs = () =>
             nemo minima ea quo
             labore amet quos! Laborum, quia! Sapiente deserunt, recusandae aspernatur sunt vel enim molestiae
             possimus temporibus.
-            </p>
+        </p>
     </div>
 
 export default AboutUs
