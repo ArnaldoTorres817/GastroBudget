@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import AlgoliaPlaces from 'algolia-places-react';
-import RestaurantResult from './RestaurantResult';
+import RestaurantResult from '../restaurantresult/RestaurantResult';
+import './Form.css'
 
 const axios = require('axios');
 
-const InputForm = () => {
+const Form = () => {
     const [cuisine, setCuisine] = useState(null);
     const [budget, setBudget] = useState(1);
     const [location, setLocation] = useState(null);
 
-    const[response, setResponse] = useState(null);
+    const [response, setResponse] = useState(null);
 
     const handleButtonAction = e => {
-        if (cuisine == null && location == null) {
+        if (cuisine == null || location == null) {
             alert('You cannot leave any field empty.');
             return;
         }
@@ -31,10 +32,10 @@ const InputForm = () => {
             }
         })
             .then((res) => {
-                console.log(res.data.businesses)
-                setResponse(res.data.businesses) 
+                setResponse(res.data.businesses)
             })
             .catch((err) => {
+                console.log(process.env)
                 console.log('error')
             })
     }
@@ -97,16 +98,16 @@ const InputForm = () => {
                 <button type='button' id="search-button" onClick={handleButtonAction}>Search</button>
             </div>
 
-            {(response != null) ? 
-                    response.map((restaurant) =>
-                    <RestaurantResult urlYelp={restaurant.url} urlImage={restaurant.image_url} name={restaurant.name} status={restaurant.is_closed ? "Closed"  : "Open"} key={restaurant.id}/>
-                ) : console.log("No results")
-            
+            {(response != null) ?
+                response.map((restaurant) =>
+                    <RestaurantResult urlYelp={restaurant.url} urlImage={restaurant.image_url} name={restaurant.name} status={restaurant.is_closed ? "Closed" : "Open"} key={restaurant.id} />
+                ) : null
+
             }
-            {/* <RestaurantResult urlYelp="https://www.yelp.com/biz/la-caba%C3%B1a-santa-isabel-2?osq=pizza" urlImage="https://s3-media2.fl.yelpcdn.com/bphoto/V1LF-ZJufHXlBmmeCnpAYA/o.jpg" name="La Cabaña" status="Open" /> */}
+            <RestaurantResult urlYelp="https://www.yelp.com/biz/la-caba%C3%B1a-santa-isabel-2?osq=pizza" urlImage="https://s3-media2.fl.yelpcdn.com/bphoto/V1LF-ZJufHXlBmmeCnpAYA/o.jpg" name="La Cabaña" status="Open" />
         </div>
 
     )
 };
 
-export default InputForm
+export default Form

@@ -1,0 +1,82 @@
+.card {
+    color: black;
+    background-color: rgb(250, 250, 250);
+    border-radius: 1em;
+    border: 5px solid #62a5a1;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 45%;
+    height: 12em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    transition: all 200ms ease;
+}
+
+.card:hover {
+    background-color: rgb(98, 165, 161);
+    padding: 1em;
+    color: white;
+}
+
+.card-text-container {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    text-align: center;
+    height: inherit;
+    width: 50%;
+}
+
+.image {
+    padding-left: 1em;
+    height: 90%;
+    width: 50%;
+    object-fit: contain;
+}
+
+#restaurant-name {
+    margin: 0;
+    font-family: Lato, sans-serif;
+    font-weight: 800;
+}
+
+#yelp-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#see-more {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+@media (max-width: 1080px) {
+    .image {
+        width: 80%;
+        padding: 0;
+    }
+
+    .card {
+        padding-top: 1em;
+        width: 90%;
+        flex-direction: column;
+        height: initial;
+    }
+    .card-text-container {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        box-sizing: border-box;
+        line-height: 1.5em;
+    }
+
+    #yelp-message {
+        padding-top: 1em;
+    }
+}

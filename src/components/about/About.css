@@ -1,0 +1,11 @@
+section {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+@media (max-width: 1080px) {
+    section {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}

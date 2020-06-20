@@ -1,0 +1,67 @@
+.algolia-places {
+    box-sizing: border-box;
+    width: max-content;
+}
+
+#input-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-break {
+    flex-basis: 100%;
+    width: 0;
+    margin-bottom: 0.8em;
+}
+
+select, input:not([type='submit']) {
+    margin-left: 0.5em;
+}
+
+label:not(:first-of-type) {
+    margin-left: 1.5em;
+}
+
+#search-button {
+    width: min-content;
+    align-self: center;
+    font-size: large;
+    border: 0;
+    border-radius: 0.5em;
+    padding: 0.5em 0.75em;
+    background-color: var(--primary-color);
+    color: white;
+    transition: all 200ms ease;
+    margin-bottom: 1em;
+}
+
+#search-button:hover {
+    font-size: x-large;
+    background-color: rgba(98, 165, 161, 0.8);
+}
+
+@media (max-width: 1080px) {
+    #input-form {
+        flex-direction: column;
+        align-items: initial;
+    }
+    input, select {
+        margin-top: 0.5em;
+    }
+    input {
+        margin-left: 0 !important;
+    }
+    select {
+        margin-left: 0 !important;
+    }
+    label {
+        margin-left: 0 !important;
+    }
+    label:not(:first-of-type) {
+        margin-top: 1em;
+    }
+}
