@@ -65,6 +65,7 @@ label:not(:first-of-type) {
     background-color: var(--primary-color);
     color: white;
     transition: all 200ms ease;
+    margin-bottom: 1em;
 }
 
 #search-button:hover {
@@ -80,6 +81,54 @@ section {
 .algolia-places {
     box-sizing: border-box;
     width: max-content;
+}
+
+.card {
+    color: black;
+    background-color: rgb(250, 250, 250);
+    border-radius: 1em;
+    /* box-shadow: 4px 4px 8px rgb(145, 145, 145); */
+    border: 5px solid #62a5a1;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 45%;
+    height: 30vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    transition: all 200ms ease;
+}
+
+.card:hover{
+    background-color: rgb(98, 165, 161);
+    padding: 1em;
+    color: white;
+}
+
+.card-text-container {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    text-align: center;
+    height: inherit;
+    width: 50%;
+}
+
+.image {
+    padding: 1em;
+    height: 90%;
+    width: 50%;
+    object-fit: contain;
+}
+
+#restaurant-name{
+    margin: 0;
+    font-family: Lato,sans-serif;
+    font-weight: 800;
 }
 
 @media (max-width: 1080px) {
@@ -106,4 +155,14 @@ section {
         padding-left: 1em;
         padding-right: 1em;
     }
+    .card{
+        width: 90%;
+        box-sizing: border-box;
+        flex-direction: column;
+        height: initial;
+    }
+    .card-text-container{
+        padding-bottom: 1em;
+    }
+
 }

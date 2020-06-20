@@ -1,21 +1,16 @@
 import React from 'react';
-import './App.css';
 
-import InputForm from './components/InputForm';
+
+
 import Header from './components/Header'
-import AboutUs from './components/AboutUs'
+
+import MainContent from './components/MainContent'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
-      <main>
-        <h2>Pick your food based on your budget.</h2>
-        <InputForm />
-        <section>
-          <AboutUs />
-        </section>
-      </main>
+      <MainContent />
     </div>
   );
 }
