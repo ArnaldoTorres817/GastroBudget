@@ -1,0 +1,53 @@
+[33mcommit ed951e8c4f2742f2cf1ba36c7f5e68ead186d5ec[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: CarlosOriol <oriol.carlos3@gmail.com>
+Date:   Sat Jun 20 17:30:36 2020 -0400
+
+    Application working and added more css
+
+[33mcommit 16e9abb6f541e1d5089bac4b1addb7f3b86bcf06[m
+Author: Arnaldo <arnaldomtorres15@gmail.com>
+Date:   Thu Jun 18 20:16:50 2020 -0400
+
+    feat: validation of input
+
+[33mcommit ef51644a5d07a2ca469d5ffb5f27bda2f72bc408[m[33m ([m[1;31morigin/test[m[33m, [m[1;32mtest[m[33m)[m
+Author: CarlosOriol <oriol.carlos3@gmail.com>
+Date:   Thu Jun 18 19:18:34 2020 -0400
+
+    Search the correct data on the yelp api and added more cuisines
+
+[33mcommit 08d41f63c64227b041862f1ccf053072e47da8a0[m
+Author: CarlosOriol <oriol.carlos3@gmail.com>
+Date:   Thu Jun 18 18:11:40 2020 -0400
+
+    Fixed react hooks bug
+
+[33mcommit 85d65a2fff722c8d1bc040cdd907fb92f35c24f3[m
+Author: Arnaldo <arnaldomtorres15@gmail.com>
+Date:   Thu Jun 18 16:03:53 2020 -0400
+
+    fetching api and react hooks not working
+
+[33mcommit d8622a48b11a776258d6ac84148f1170a78825a6[m
+Author: CarlosOriol <oriol.carlos3@gmail.com>
+Date:   Thu Jun 18 14:07:03 2020 -0400
+
+    Yelp API request on button
+
+[33mcommit 7aaea9683ca76b6c4452bd200d3d57e7797fe96a[m
+Author: Arnaldo <arnaldomtorres15@gmail.com>
+Date:   Thu Jun 18 12:25:02 2020 -0400
+
+    fix: mistype when importing other components
+
+[33mcommit 129a9f4195aec4b65d673d14bb04f50fda688b58[m
+Author: Arnaldo <arnaldomtorres15@gmail.com>
+Date:   Thu Jun 18 12:13:56 2020 -0400
+
+    refactor: the application was converted to React
+
+[33mcommit 0e255196277dd3d3f6654e3f5836590a605ca3ed[m
+Author: Arnaldo <arnaldomtorres15@gmail.com>
+Date:   Thu Jun 18 12:08:20 2020 -0400
+
+    init repo

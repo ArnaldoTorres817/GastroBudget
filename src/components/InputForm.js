@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import AlgoliaPlaces from 'algolia-places-react';
-import RestaurantResult from '../restaurantresult/RestaurantResult';
-import './Form.css'
+import RestaurantResult from './RestaurantResult';
 
 const axios = require('axios');
 
-const Form = () => {
+const InputForm = () => {
     const [cuisine, setCuisine] = useState(null);
     const [budget, setBudget] = useState(1);
     const [location, setLocation] = useState(null);
 
-    const [response, setResponse] = useState(null);
+    const[response, setResponse] = useState(null);
 
     const handleButtonAction = e => {
-        if (cuisine == null || location == null) {
+        if (cuisine == null && location == null) {
             alert('You cannot leave any field empty.');
             return;
         }
@@ -32,10 +31,10 @@ const Form = () => {
             }
         })
             .then((res) => {
-                setResponse(res.data.businesses)
+                console.log(res.data.businesses)
+                setResponse(res.data.businesses) 
             })
             .catch((err) => {
-                console.log(process.env)
                 console.log('error')
             })
     }
@@ -98,11 +97,11 @@ const Form = () => {
                 <button type='button' id="search-button" onClick={handleButtonAction}>Search</button>
             </div>
 
-            {(response != null) ?
-                response.map((restaurant) =>
-                    <RestaurantResult urlYelp={restaurant.url} urlImage={restaurant.image_url} name={restaurant.name} status={restaurant.is_closed ? "Closed" : "Open"} key={restaurant.id} />
-                ) : null
-
+            {(response != null) ? 
+                    response.map((restaurant) =>
+                    <RestaurantResult urlYelp={restaurant.url} urlImage={restaurant.image_url} name={restaurant.name} status={restaurant.is_closed ? "Closed"  : "Open"} key={restaurant.id}/>
+                ) : console.log("No results")
+            
             }
            
         </div>
@@ -110,4 +109,4 @@ const Form = () => {
     )
 };
 
-export default Form
+export default InputForm
