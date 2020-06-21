@@ -102,9 +102,8 @@ const Form = () => {
                 response.map((restaurant) =>
                     <RestaurantResult urlYelp={restaurant.url} urlImage={restaurant.image_url} name={restaurant.name} status={restaurant.is_closed ? "Closed" : "Open"} key={restaurant.id} />
                 ) : null
-
             }
-           
+
         </div>
 
     )

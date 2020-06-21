@@ -57,59 +57,18 @@
     font-size: 0.8em;
 }
 
-
-/* @media (orientation: portrait) and (max-width: 1024px) {
-    .image {
-        width: 80%;
-        height: 200px;
-        padding: 0;
-    }
-
-    .card {
-        padding-top: 1em;
-        width: 70%;
-        flex-direction: column;
-        height: initial;
-    }
-    .card-text-container {
-        padding-top: 1em;
-        padding-bottom: 0;
-        box-sizing: border-box;
-        line-height: 1.5em;
-    }
-
-    #yelp-message {
-        padding-top: 1em;
-    }
-} */
-
-/* @media (max-width: 1080px) {
-    .card{
-        width: 80%;
-    }
-} */
-
-
 @media screen and (max-width: 991px) {
-    .card{
-        width: 80%;
-    }
-    
-    }
-    
-@media screen and (max-width: 767px) {
-    .card{
+    .card {
         width: 80%;
     }
 }
-    
+
 @media screen and (max-width: 479px) {
     .image {
         width: 80%;
         height: 200px;
         padding: 0;
     }
-
     .card {
         padding-top: 1em;
         width: 70%;
@@ -122,8 +81,7 @@
         box-sizing: border-box;
         line-height: 1.5em;
     }
-
     #yelp-message {
         padding-top: 1em;
-    }    
+    }
 }

@@ -5,11 +5,16 @@
 
 #input-form {
     display: flex;
+    display: -webkit-flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
+    -webkit-align-content: center;
     align-items: center;
+    -webkit-align-items: center;
     justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
 }
 
 .flex-break {
@@ -64,8 +69,7 @@ label:not(:first-of-type) {
     label:not(:first-of-type) {
         margin-top: 1em;
     }
-
-    .ap-input, .ap-hint{
+    .ap-input, .ap-hint {
         width: 17.5em;
     }
 }
