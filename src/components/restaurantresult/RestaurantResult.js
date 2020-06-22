@@ -7,7 +7,7 @@ const RestaurantResult = (props) =>
         <div className="card-text-container">
             <div id="restaurant-name">{props.name}</div>
             <div>Status: {props.status}</div>
-            <div id="yelp-message"><span id='see-more'>See more on</span><img src={process.env.PUBLIC_URL + '/yelp_logo.png'} alt="yelp-logo" /></div>
+            <div id="yelp-message"><span id='see-more'>See more on</span><img src={process.env.PUBLIC_URL + '/yelp_logo_mini.png'} alt="yelp-logo" /></div>
         </div>
     </a>
 

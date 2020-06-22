@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AlgoliaPlaces from 'algolia-places-react';
 import RestaurantResult from '../restaurantresult/RestaurantResult';
+import LoadingAnimation from './LoadingAnimation'
 import './Form.css'
 
 const axios = require('axios');
@@ -12,15 +13,20 @@ const Form = () => {
 
     const [response, setResponse] = useState(null);
 
+    const [loading,setLoading] = useState(false);
+
     const handleButtonAction = e => {
         if (cuisine == null || location == null) {
             alert('You cannot leave any field empty.');
             return;
         }
+
         searchOnYelpApi();
+        
     }
 
     const searchOnYelpApi = () => {
+        setLoading(true)
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
             headers: {
                 Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
@@ -33,11 +39,17 @@ const Form = () => {
         })
             .then((res) => {
                 setResponse(res.data.businesses)
+
             })
             .catch((err) => {
                 console.log(process.env)
                 console.log('error')
+                
             })
+            .then(()=>{
+                setLoading(false)
+            })
+            
     }
 
     return (
@@ -96,8 +108,9 @@ const Form = () => {
                 />
                 <div className="flex-break"></div>
                 <button type='button' id="search-button" onClick={handleButtonAction}>Search</button>
+                
             </div>
-
+            {loading ? <LoadingAnimation/>: null}
             {(response != null) ?
                 response.map((restaurant) =>
                     <RestaurantResult urlYelp={restaurant.url} urlImage={restaurant.image_url} name={restaurant.name} status={restaurant.is_closed ? "Closed" : "Open"} key={restaurant.id} />
