@@ -13,6 +13,11 @@ section {
     width: 75%;
 }
 
+.note{
+    font-style: italic;
+    font-size: smaller;
+}
+
 .text-about{
     
     display: flex;

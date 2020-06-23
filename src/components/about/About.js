@@ -4,6 +4,7 @@ import './About.css'
 import ImageSlider from '../imageSlider/ImageSlider'
 const About = () =>
     <section>
+        <p className="note">note: if you dont find many results try diffrent budgets</p>
         <hr id="separator" />
         <h2>About Us</h2>
         <div className="text-about">
