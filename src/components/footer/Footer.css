@@ -1,7 +1,7 @@
 footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
-    width: inherit;
+    width: 100%;
     height: var(--footer-height);
     clear: both;
     display: flex;
@@ -15,7 +15,6 @@ footer {
     -webkit-justify-content: center;
     justify-content: space-around;
     padding: 1em;
-    margin-top: calc(var(--footer-height) * -0.3);
     box-sizing: border-box;
 }
 
