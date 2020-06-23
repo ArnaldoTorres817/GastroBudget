@@ -3,12 +3,17 @@
     --body-font: Lato, sans-serif;
     --headings-font: Satisfy, sans-serif;
     --primary-color: #62a5a1;
+    --footer-height: 10em;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
     margin: 0;
     font-family: var(--body-font);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,18 +21,6 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-#title {
-    margin: 0;
-}
-
 p {
     text-align: justify;
-}
-
-@media screen and (max-width: 479px){
-    main{
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-    
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import './About.css'
 
 const About = () =>
-    <div>
+    <section>
         <h2>About Us</h2>
         <p>
             GastroBudget is a food picker application where you input the 
@@ -10,6 +10,6 @@ const About = () =>
             Yelp API to match results based on the input and display them to you in a 
             simple manner.
         </p>
-    </div>
+    </section>
 
 export default About

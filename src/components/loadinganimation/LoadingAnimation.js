@@ -1,5 +1,5 @@
 import React from 'react'
-import './Form.css'
+import './LoadingAnimation.css'
 
 const LoadingAnimation = () =>
     <div className="loader"></div>

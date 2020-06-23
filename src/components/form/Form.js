@@ -1,31 +1,28 @@
 import React, { useState } from 'react';
 import AlgoliaPlaces from 'algolia-places-react';
 import RestaurantResult from '../restaurantresult/RestaurantResult';
-import LoadingAnimation from './LoadingAnimation'
+import LoadingAnimation from '../loadinganimation/LoadingAnimation'
 import './Form.css'
 
 const axios = require('axios');
 
 const Form = () => {
-    const [cuisine, setCuisine] = useState(null);
+    const [cuisine, setCuisine] = useState('empty');
     const [budget, setBudget] = useState(1);
-    const [location, setLocation] = useState(null);
+    const [location, setLocation] = useState('');
+    const [restaurantList, setRestaurantList] = useState(null);
+    const [isLoading, setLoading] = useState(false);
 
-    const [response, setResponse] = useState(null);
-
-    const [loading,setLoading] = useState(false);
-
-    const handleButtonAction = e => {
-        if (cuisine == null || location == null) {
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (cuisine.match('empty') || location == null) {
             alert('You cannot leave any field empty.');
             return;
         }
-
-        searchOnYelpApi();
-        
+        makeRequest();
     }
 
-    const searchOnYelpApi = () => {
+    const makeRequest = () => {
         setLoading(true)
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
             headers: {
@@ -38,31 +35,32 @@ const Form = () => {
             }
         })
             .then((res) => {
-                setResponse(res.data.businesses)
-
+                setRestaurantList(res.data.businesses)
             })
             .catch((err) => {
-                console.log(process.env)
                 console.log('error')
-                
             })
-            .then(()=>{
+            .then(() => {
                 setLoading(false)
             })
-            
     }
 
     return (
         <div>
-            <div id="input-form">
+            <form id="form" onSubmit={handleSubmit}>
                 <label htmlFor="cuisine">Cuisine</label>
-                <select name="cuisine" id="cuisine" onChange={e => setCuisine(e.target.value)}>
+                <select
+                    value={cuisine}
+                    name="cuisine"
+                    id="cuisine"
+                    onChange={e => setCuisine(e.target.value)}
+                >
                     <option value='empty' aria-disabled aria-selected>Select your cuisine type</option>
                     <option value='bakeries'>Bakeries</option>
                     <option value='desserts'>Desserts</option>
                     <option value='foodtrucks'>Food Trucks</option>
                     <option value='icecream'>Ice Cream &amp; Frozen Yogurt</option>
-                    <option value='gourmet'>Specialty Food</option>
+                    <option value='gourmet'>Gourmet</option>
                     <option value='breakfast_brunch'>Breakfast &amp; Brunch</option>
                     <option value='buffets'>Buffets</option>
                     <option value='burgers,sandwiches'>Burgers &amp; Sandwiches</option>
@@ -79,7 +77,12 @@ const Form = () => {
                     <option value='vegan,vegetarian'>Vegan / Vegetarian</option>
                 </select>
                 <label htmlFor="budget">Budget</label>
-                <select name="budget" id="budget" onChange={e => setBudget(e.target.value)}>
+                <select
+                    value={budget}
+                    name="budget"
+                    id="budget"
+                    onChange={e => setBudget(e.target.value)}
+                >
                     <option value="1" aria-selected>Low</option>
                     <option value="2">Medium</option>
                     <option value="3">High</option>
@@ -104,21 +107,27 @@ const Form = () => {
 
                     onSuggestions={({ query }) =>
                         setLocation(query)}
-
                 />
                 <div className="flex-break"></div>
-                <button type='button' id="search-button" onClick={handleButtonAction}>Search</button>
-                
-            </div>
-            {loading ? <LoadingAnimation/>: null}
-            {(response != null) ?
-                response.map((restaurant) =>
-                    <RestaurantResult urlYelp={restaurant.url} urlImage={restaurant.image_url} name={restaurant.name} status={restaurant.is_closed ? "Closed" : "Open"} key={restaurant.id} />
+                <input
+                    type='submit'
+                    value='Search'
+                    id='search-button'
+                />
+            </form>
+            {isLoading ? <LoadingAnimation /> : null}
+            {(restaurantList) ?
+                restaurantList.map((restaurant) =>
+                    <RestaurantResult
+                        yelp_url={restaurant.url}
+                        image_url={restaurant.image_url}
+                        name={restaurant.name}
+                        location={restaurant.location}
+                        key={restaurant.id}
+                    />
                 ) : null
             }
-
         </div>
-
     )
 };
 
