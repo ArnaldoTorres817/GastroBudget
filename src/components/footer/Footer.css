@@ -33,6 +33,10 @@ footer {
     align-self: center;
 }
 
+.footer-item img {
+    padding-bottom: 0.5em;
+}
+
 .footer-link:hover {
     color: rgba(0, 0, 0, 0.5);
 }
