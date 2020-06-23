@@ -1,0 +1,11 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.note {
+    font-style: italic;
+    font-size: small;
+    text-align: center;
+}

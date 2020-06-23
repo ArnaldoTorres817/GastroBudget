@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 import Header from '../header/Header'
 
-import MainContent from '../maincontent/MainContent'
+import MainContent from '../mainContent/MainContent'
 
 import Footer from '../footer/Footer'
 import './App.css'
@@ -16,7 +16,7 @@ function App() {
       <MainContent />
       <Footer/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
