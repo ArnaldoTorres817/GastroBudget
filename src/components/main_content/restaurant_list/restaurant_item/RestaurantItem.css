@@ -34,6 +34,7 @@
     text-align: center;
     height: inherit;
     box-sizing: border-box;
+    width: 50%;
 }
 
 .image {
@@ -80,6 +81,7 @@
     }
     .card-text {
         padding-top: 1em;
+        width: initial;
     }
     #see-more {
         padding-top: 1rem;
