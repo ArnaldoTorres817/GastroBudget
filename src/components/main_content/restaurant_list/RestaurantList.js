@@ -18,7 +18,7 @@ const RestaurantList = (props) => {
                 ) :
                 null
             }
-            <span className='note'>*Note: Try using other combination of values for more restaurant results.</span>
+            <span className='note'>*Note: Try using other values of budget for more restaurant results.</span>
         </div>
     )
 }

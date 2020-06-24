@@ -35,7 +35,7 @@ const MainContent = () => {
             })
             .then((res) => {
                 const restaurantList = res.data.businesses
-                console.log(restaurantList)
+                // console.log(restaurantList)
                 setRestaurants(restaurantList)
             })
             .catch((err) => {
@@ -49,12 +49,11 @@ const MainContent = () => {
     return (
         <main>
             <BackToTop
-                // showOnScrollUp
-                showAt={100}
+                showAt={75}
                 speed={1000}
                 easing="easeInOutQuint"
             >
-                <div id="back-to-top-button"><span>&#11165;</span></div>
+                <div id="back-to-top-button"><span><img src={`${process.env.PUBLIC_URL}/images/arrow_up.png`} alt="^" /></span></div>
             </BackToTop>
             <h2>Pick your food based on your budget.</h2>
             <Form
