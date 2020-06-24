@@ -73,9 +73,9 @@ const Form = (props) => {
                     apiKey: process.env.REACT_APP_ALGOLIA_API_KEY,
                     language: 'en',
                     countries: ['us', 'pr'],
-                    type: 'city'
+                    type: 'city',
+                    useDeviceLocation: false
                 }}
-
                 onChange={({ suggestion }) =>
                     setLocation(suggestion.value)}
 
