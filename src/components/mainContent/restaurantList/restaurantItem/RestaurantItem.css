@@ -59,10 +59,12 @@
     justify-content: center;
 }
 
+#see-more span {
+    padding-top: 1em;
+}
+
 #yelp-logo {
     object-fit: contain;
-    padding-bottom: 0.5em;
-
 }
 
 @media screen and (max-width: 1024px) {
