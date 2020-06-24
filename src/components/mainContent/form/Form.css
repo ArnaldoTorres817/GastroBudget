@@ -24,10 +24,12 @@
 }
 
 .form-select{
-    border-color: #dadce0;
+    border-color: #CCC;
     height: 2em;
     border-radius: 3px;
 }
+
+
 
 select, input:not([type='submit']) {
     margin-left: 0.5em;

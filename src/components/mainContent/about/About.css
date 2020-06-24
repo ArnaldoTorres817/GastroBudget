@@ -18,6 +18,7 @@ section {
     flex-wrap: wrap;
     flex-direction: row;
     width: 60%;
+    z-index:-1;
 }
 
 #text {
