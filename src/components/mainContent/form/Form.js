@@ -24,6 +24,7 @@ const Form = (props) => {
             <select
                 value={cuisine}
                 name="cuisine"
+                className="form-select"
                 id="cuisine"
                 onChange={e => setCuisine(e.target.value)}
             >
@@ -52,6 +53,7 @@ const Form = (props) => {
             <select
                 value={budget}
                 name="budget"
+                className="form-select"
                 id="budget"
                 onChange={e => setBudget(e.target.value)}
             >
