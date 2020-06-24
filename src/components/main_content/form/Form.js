@@ -57,10 +57,10 @@ const Form = (props) => {
                 id="budget"
                 onChange={e => setBudget(e.target.value)}
             >
-                <option value="1" aria-selected>Low</option>
-                <option value="2">Medium</option>
-                <option value="3">High</option>
-                <option value="4">Very High</option>
+                <option value="1" aria-selected>Low ($)</option>
+                <option value="2">Medium ($$)</option>
+                <option value="3">High ($$$)</option>
+                <option value="4">Very High ($$$$)</option>
             </select>
 
             <label htmlFor="location-text">Location</label>
@@ -73,9 +73,9 @@ const Form = (props) => {
                     apiKey: process.env.REACT_APP_ALGOLIA_API_KEY,
                     language: 'en',
                     countries: ['us', 'pr'],
-                    type: 'city'
+                    type: 'city',
+                    useDeviceLocation: false
                 }}
-
                 onChange={({ suggestion }) =>
                     setLocation(suggestion.value)}
 
