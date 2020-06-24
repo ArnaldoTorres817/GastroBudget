@@ -1,66 +1,93 @@
 import React, { useState } from 'react'
 import AlgoliaPlaces from 'algolia-places-react'
 import './Form.css'
+import CheckBoxList from './checkboxlist/CheckBoxList'
 
 const Form = (props) => {
     const { onRequest } = props
 
-    const [cuisine, setCuisine] = useState('empty')
-    const [budget, setBudget] = useState("1")
+    const [categories, setCategories] = useState('')
+    const [price, setPrice] = useState(1)
     const [location, setLocation] = useState('')
+    const [options, setOptions] = useState(
+        [
+            { name: 'bakeries', labelText: 'Bakeries', value: 'bakeries', checked: false },
+            { name: 'breakfast_brunch', labelText: 'Breakfast & Brunch', value: 'breakfast_brunch', checked: false },
+            { name: 'buffets', labelText: 'Buffets', value: 'buffets', checked: false },
+            { name: 'burgers', labelText: 'Burgers & Sandwiches', value: 'burgers,sandwiches', checked: false },
+            { name: 'caribbean', labelText: 'Caribbean', value: 'caribbean', checked: false },
+            { name: 'chinese', labelText: 'Chinese', value: 'chinese', checked: false },
+            { name: 'coffee', labelText: 'Cafes / Cafeteria', value: 'coffee,cafes,cafeteria', checked: false },
+            { name: 'desserts', labelText: 'Desserts', value: 'desserts', checked: false },
+            { name: 'diners', labelText: 'Diners', value: 'diners', checked: false },
+            { name: 'foodtrucks', labelText: 'Food Truck', value: 'foodtrucks', checked: false },
+            { name: 'french', labelText: 'French', value: 'french', checked: false },
+            { name: 'gourmet', labelText: 'Gourmet', value: 'gourmet', checked: false },
+            { name: 'icecream', labelText: 'Ice Cream & Frozen Yogurt', value: 'icecream', checked: false },
+            { name: 'italian', labelText: 'Italian', value: 'italian', checked: false },
+            { name: 'japanese', labelText: 'Japanese', value: 'japanese', checked: false },
+            { name: 'mexican', labelText: 'Mexican', value: 'mexican', checked: false },
+            { name: 'pizza', labelText: 'Pizza', value: 'pizza', checked: false },
+            { name: 'seafood', labelText: 'Seafood', value: 'seafood', checked: false },
+            { name: 'vegan', labelText: 'Vegan', value: 'vegan', checked: false },
+            { name: 'vegetarian', labelText: 'Vegetarian', value: 'vegetarian', checked: false }
+        ]
+    )
+
+    const isMatched = name => item => {
+        if (name === item.name) {
+            item.checked = !item.checked
+        }
+        return item
+    }
+
+    const isChecked = item => item.checked
+
+    const updateCategories = () => {
+        let updatedCategories = ''
+        options
+            .filter(isChecked)
+            .forEach(item =>
+                updatedCategories += item.value + ','
+            )
+        updatedCategories = updatedCategories.slice(0, updatedCategories.length - 1)
+        setCategories(updatedCategories)
+    }
+
+    const handleChange = e => {
+        const name = e.target.name
+        const updatedOptions = options.map(isMatched(name))
+        setOptions(updatedOptions)
+        updateCategories()
+    }
 
     const handleSubmit = e => {
         e.preventDefault()
-        if (cuisine === 'empty' || location === '') {
+        if (categories === '' || location === '') {
             alert('You cannot leave any field empty.')
             return
         }
-        onRequest(cuisine, budget, location)
+        onRequest(categories, price, location)
     }
 
     return (
         <form id="form" onSubmit={handleSubmit}>
-            <label htmlFor="cuisine">Cuisine</label>
-            <select
-                value={cuisine}
-                name="cuisine"
-                className="form-select"
-                id="cuisine"
-                onChange={e => setCuisine(e.target.value)}
-            >
-                <option value='empty' aria-disabled aria-selected>Select cuisine type</option>
-                <option value='bakeries'>Bakeries</option>
-                <option value='breakfast_brunch'>Breakfast &amp; Brunch</option>
-                <option value='buffets'>Buffets</option>
-                <option value='burgers,sandwiches'>Burgers &amp; Sandwiches</option>
-                <option value='caribbean'>Caribbean</option>
-                <option value='chinese'>Chinese</option>
-                <option value='coffee,cafes,cafeteria'>Cafes / Cafeteria</option>
-                <option value='desserts'>Desserts</option>
-                <option value='diners'>Diners</option>
-                <option value='foodtrucks'>Food Trucks</option>
-                <option value='french'>French</option>
-                <option value='gourmet'>Gourmet</option>
-                <option value='icecream'>Ice Cream &amp; Frozen Yogurt</option>
-                <option value='italian'>Italian</option>
-                <option value='japanese'>Japanese</option>
-                <option value='mexican'>Mexican</option>
-                <option value='pizza'>Pizza</option>
-                <option value='seafood'>Seafood</option>
-                <option value='vegan,vegetarian'>Vegan / Vegetarian</option>
-            </select>
+            <label htmlFor="cuisine">Cuisines</label>
+            <CheckBoxList
+                options={options}
+                onChange={handleChange} />
             <label htmlFor="budget">Budget</label>
             <select
-                value={budget}
+                value={price}
                 name="budget"
                 className="form-select"
                 id="budget"
-                onChange={e => setBudget(e.target.value)}
+                onChange={e => setPrice(e.target.value)}
             >
-                <option value="1" aria-selected>Low ($)</option>
-                <option value="2">Medium ($$)</option>
-                <option value="3">High ($$$)</option>
-                <option value="4">Very High ($$$$)</option>
+                <option value={1}>Low ($)</option>
+                <option value={2}>Medium ($$)</option>
+                <option value={3}>High ($$$)</option>
+                <option value={4}>Very High ($$$$)</option>
             </select>
 
             <label htmlFor="location-text">Location</label>
@@ -77,7 +104,7 @@ const Form = (props) => {
                     useDeviceLocation: false
                 }}
                 onChange={({ suggestion }) =>
-                    setLocation(suggestion.value)}
+                    setLocation(suggestion.name + ',' + suggestion.country)}
 
                 onSuggestions={({ query }) =>
                     setLocation(query)}

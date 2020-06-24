@@ -10,17 +10,10 @@ import BackToTop from "react-back-to-top-button"
 const axios = require('axios')
 
 const MainContent = () => {
-    const [
-        restaurants,
-        setRestaurants
-    ] = useState()
+    const [restaurants, setRestaurants] = useState()
+    const [loading, setLoading] = useState(false)
 
-    const [
-        loading,
-        setLoading
-    ] = useState(false)
-
-    const onRequest = (cuisine, budget, location,) => {
+    const onRequest = (categories, price, location) => {
         setLoading(true)
         axios
             .get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
@@ -28,14 +21,13 @@ const MainContent = () => {
                     Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
                 },
                 params: {
-                    categories: cuisine,
-                    price: budget,
+                    categories,
+                    price,
                     location
                 }
             })
             .then((res) => {
                 const restaurantList = res.data.businesses
-                // console.log(restaurantList)
                 setRestaurants(restaurantList)
             })
             .catch((err) => {
