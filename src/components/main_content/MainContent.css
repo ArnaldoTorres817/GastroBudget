@@ -5,6 +5,9 @@ main {
 
 .fWohKN {
     z-index: 1;
+    position:absolute;
+    margin: 0;
+    padding: 0;
 }
 
 #back-to-top-button {
@@ -32,4 +35,9 @@ main {
         padding-left: 0.5em;
         padding-right: 0.5em;
     }
+
+    .fWohKN{
+        box-shadow: none;
+    }
+    
 }
