@@ -42,6 +42,7 @@
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 5px;
+    background-color: #fff;
 }
 
 select, input:not([type='submit']) {
