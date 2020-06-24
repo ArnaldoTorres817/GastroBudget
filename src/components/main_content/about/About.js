@@ -1,7 +1,7 @@
 import React from 'react'
 import './About.css'
 
-import ImageSlider from './imageSlider/ImageSlider'
+import ImageSlider from './image_slider/ImageSlider'
 const About = () =>
     <section>
         <hr id="separator" />

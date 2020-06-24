@@ -1,6 +1,6 @@
 import React from 'react'
 import './RestaurantList.css'
-import RestaurantItem from './restaurantItem/RestaurantItem'
+import RestaurantItem from './restaurant_item/RestaurantItem'
 
 const RestaurantList = (props) => {
     const { restaurants } = props

@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import './MainContent.css'
 import Form from './form/Form'
 import About from './about/About'
-import RestaurantList from './restaurantList/RestaurantList'
-import LoadingAnimation from './loadingAnimation/LoadingAnimation'
+import RestaurantList from './restaurant_list/RestaurantList'
+import LoadingAnimation from './loading_animation/LoadingAnimation'
 import BackToTop from "react-back-to-top-button"
 
 const axios = require('axios')

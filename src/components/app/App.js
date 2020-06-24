@@ -2,7 +2,7 @@ import React from 'react'
 
 import Header from '../header/Header'
 
-import MainContent from '../mainContent/MainContent'
+import MainContent from '../main_content/MainContent'
 
 import Footer from '../footer/Footer'
 import './App.css'
