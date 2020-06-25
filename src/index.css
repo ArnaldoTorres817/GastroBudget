@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Satisfy&display=swap');
 :root {
-    --body-font: Lato, sans-serif;
-    --headings-font: Satisfy, sans-serif;
     --primary-color: #62a5a1;
     --footer-height: 13em;
+    --headings-font: Satisfy, sans-serif;
+    --body-font: Lato, sans-serif;
 }
 
 html, body {
@@ -17,8 +17,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--headings-font);
     text-align: center;
+    font-family: var(--headings-font);
 }
 
 p {

@@ -1,37 +1,39 @@
 #checkbox-container {
     box-sizing: border-box;
-
 }
 
 .checkbox-button {
     border: 1px solid #CCC;
     border-radius: 3px;
-    padding-left: 0.5em;
-    padding-right: 1.5em;
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
     appearance: none;
+    background-color: #fff;
     background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 5px;
-    background-color: #fff;
+    padding-top: 0.4em;
+    padding-right: 1.5em;
+    padding-bottom: 0.4em;
+    padding-left: 0.5em;
 }
 
 .checkboxlist {
     position: absolute;
-    background-color: white;
-    border: 1px solid #CCC;
-    padding-right: 0.6em;
-    padding-left: 0.3em;
-    padding-bottom: 0.3em;
     z-index: 1;
+    border: 1px solid #CCC;
+    background-color: white;
     width: inherit;
 }
 
+.check-item {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: small;
+}
+
 .check-item:hover {
+    display: inline-block;
     background-color: var(--primary-color);
-    display: block;
     width: 100%;
     color: white;
 }
@@ -43,9 +45,5 @@
     .checkboxlist {
         padding-right: 1.1em;
         width: 90%;
-    }
-    .check-item:hover {
-        color: black;
-        background-color: initial;
     }
 }

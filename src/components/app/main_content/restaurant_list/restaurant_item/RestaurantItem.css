@@ -1,39 +1,39 @@
 .card {
-    color: black;
-    background-color: rgb(250, 250, 250);
-    border-radius: 1em;
-    border: 5px solid #62a5a1;
-    text-decoration: none;
     display: flex;
     flex-direction: row;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
     align-items: center;
     -webkit-align-items: center;
-    width: 40%;
-    height: 10em;
-    margin-left: auto;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    transition: all 100ms ease;
     margin-right: auto;
     margin-bottom: 1em;
-    transition: all 100ms ease;
+    margin-left: auto;
+    border: 5px solid #62a5a1;
+    border-radius: 1em;
+    background-color: rgb(250, 250, 250);
     padding: 1em;
+    width: 40%;
+    height: 10em;
+    text-decoration: none;
+    color: black;
 }
 
 .card:hover {
+    box-shadow: 5px 5px 5px rgb(105, 105, 105);
     background-color: rgb(98, 165, 161);
     padding: 1.2em;
     color: white;
-    box-shadow: 5px 5px 5px rgb(105, 105, 105);
 }
 
 .card-text {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-content: space-around;
     justify-content: space-around;
-    text-align: center;
     height: inherit;
-    box-sizing: border-box;
+    text-align: center;
 }
 
 .image {
@@ -46,17 +46,17 @@
 #restaurant-name {
     margin: 0;
     font-family: var(--body-font), sans-serif;
-    font-weight: 800;
     font-size: 1.2em;
+    font-weight: 800;
 }
 
 #see-more {
     display: flex;
     flex-direction: row;
-    font-style: italic;
-    font-size: small;
     align-items: center;
     justify-content: center;
+    font-size: small;
+    font-style: italic;
 }
 
 #see-more span {
@@ -64,6 +64,8 @@
 }
 
 #yelp-logo {
+    width: 75px;
+    height: auto;
     object-fit: contain;
 }
 

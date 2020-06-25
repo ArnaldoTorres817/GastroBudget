@@ -1,40 +1,42 @@
 footer {
+    box-sizing: border-box;
+    display: flex;
     position: absolute;
     bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    background-color: var(--primary-color);
+    padding: 1em 0;
     width: 100%;
     height: var(--footer-height);
-    clear: both;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary-color);
-    color: whitesmoke;
-    font-size: small;
     text-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: space-around;
-    padding: 1em;
-    box-sizing: border-box;
+    font-size: small;
+    color: whitesmoke;
 }
 
 .footer-item {
-    height: inherit;
     display: flex;
     flex-direction: row;
     align-items: center;
     -webkit-align-items: center;
     justify-content: center;
     -webkit-justify-content: center;
+    height: inherit;
 }
 
 .footer-link {
-    color: inherit;
     align-self: center;
+    color: inherit;
 }
 
-.footer-item img {
+#yelp-logo {
     padding-bottom: 0.5em;
+    width: 75px;
+    height: auto;
+    object-fit: contain;
 }
 
 .footer-link:hover {

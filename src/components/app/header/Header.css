@@ -1,9 +1,9 @@
 header {
-    background-color: var(--primary-color);
-    color: white;
     margin: 0;
+    background-color: var(--primary-color);
     padding-top: 1em;
     padding-bottom: 1em;
+    color: white;
 }
 
 #title {
