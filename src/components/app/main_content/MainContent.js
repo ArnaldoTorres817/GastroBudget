@@ -5,7 +5,6 @@ import Form from './form/Form'
 import About from './about/About'
 import RestaurantList from './restaurant_list/RestaurantList'
 import LoadingAnimation from './loading_animation/LoadingAnimation'
-import BackToTop from "react-back-to-top-button"
 
 const axios = require('axios')
 
@@ -40,13 +39,6 @@ const MainContent = () => {
 
     return (
         <main>
-            <BackToTop
-                showAt={75}
-                speed={1000}
-                easing="easeInOutQuint"
-            >
-                <div id="back-to-top-button"><span><img src={`${process.env.PUBLIC_URL}/images/arrow_up.png`} alt="^" /></span></div>
-            </BackToTop>
             <h2>Pick your food based on your budget.</h2>
             <Form
                 onRequest={onRequest}
