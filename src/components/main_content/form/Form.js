@@ -54,12 +54,32 @@ const Form = (props) => {
         setCategories(updatedCategories)
     }
 
+
     const handleChange = e => {
         const name = e.target.name
-        const updatedOptions = options.map(isMatched(name))
+        let updatedOptions = ""
+        if (name === "all") {
+            if (e.target.checked) {
+                updatedOptions = options.map(item => {
+                    item.checked = true
+                    return item
+                })
+            } else {
+                updatedOptions = options.map(item => {
+                    item.checked = false
+                    return item
+                })
+            }
+        }
+        else {
+            updatedOptions = options.map(isMatched(name)) 
+        }
         setOptions(updatedOptions)
         updateCategories()
+
     }
+
+
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -72,7 +92,7 @@ const Form = (props) => {
 
     return (
         <form id="form" onSubmit={handleSubmit}>
-            <label htmlFor="cuisine">Cuisines</label>
+            <label htmlFor="cuisine">Cuisines&nbsp;&nbsp;</label>
             <CheckBoxList
                 options={options}
                 onChange={handleChange} />
