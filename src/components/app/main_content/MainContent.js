@@ -5,6 +5,7 @@ import Form from './form/Form'
 import About from './about/About'
 import RestaurantList from './restaurant_list/RestaurantList'
 import LoadingAnimation from './loading_animation/LoadingAnimation'
+import BackToTop from './back_to_top/BackToTop'
 
 const axios = require('axios')
 
@@ -46,6 +47,7 @@ const MainContent = () => {
             {loading ? <LoadingAnimation /> : null}
             <RestaurantList restaurants={restaurants} />
             <About />
+            <BackToTop />
         </main>
     )
 }

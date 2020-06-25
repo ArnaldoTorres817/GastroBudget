@@ -1,0 +1,18 @@
+.backtotop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99;
+    border: 2px solid var(--primary-color);
+    outline: none;
+    background-color: whitesmoke;
+    cursor: pointer;
+    padding: 0.5em;
+    width: fit-content;
+    height: auto;
+}
+
+.backtotop:hover {
+    box-shadow: 0.25em 0.25em 0.25em rgb(105, 105, 105);
+    padding: 0.6em;
+}

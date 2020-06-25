@@ -3,30 +3,6 @@ main {
     overflow: auto;
 }
 
-.fWohKN {
-    z-index: 1;
-}
-
-#back-to-top-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 100ms ease;
-    border: 3px solid var(--primary-color);
-    border-radius: 50%;
-    background-color: rgb(250, 250, 250);
-    padding: 0.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    color: var(--primary-color);
-    font-size: 0.75em;
-}
-
-#back-to-top-button:hover {
-    box-shadow: 5px 5px 5px rgb(105, 105, 105);
-    padding: 0.55rem;
-}
-
 @media screen and (max-width: 479px) {
     main {
         padding-right: 0.5em;
