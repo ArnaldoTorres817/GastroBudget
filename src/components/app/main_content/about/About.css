@@ -26,6 +26,15 @@ section {
     line-height: 2em;
 }
 
+#text a {
+    text-decoration: none;
+    color: rgb(50, 76, 192);
+}
+
+#text a:hover {
+    color: rgba(50, 76, 192, 0.8);
+}
+
 @media (max-width: 1023px) {
     section {
         padding-left: 0.5em;
