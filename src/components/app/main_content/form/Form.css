@@ -52,7 +52,7 @@ label:not(:first-of-type) {
 
 #search-button {
     align-self: center;
-    transition: all 200ms ease;
+    transition: all 150ms ease;
     margin-bottom: 1em;
     border: 0;
     border-radius: 0.5em;
@@ -65,7 +65,7 @@ label:not(:first-of-type) {
 
 #search-button:hover {
     background-color: rgba(98, 165, 161, 0.8);
-    font-size: x-large;
+    font-size: 1.2em;
 }
 
 @media (max-width: 1080px) {
@@ -88,5 +88,12 @@ label:not(:first-of-type) {
     }
     label:not(:first-of-type) {
         margin-top: 1em;
+    }
+    #search-button{
+        font-size: x-large;
+    }
+    #search-button:hover {
+        background-color: var(--primary-color);
+        font-size: large;
     }
 }

@@ -34,6 +34,7 @@
     justify-content: space-around;
     height: inherit;
     text-align: center;
+    /* width: 90%; */
 }
 
 .image {
@@ -48,6 +49,7 @@
     font-family: var(--body-font), sans-serif;
     font-size: 1.2em;
     font-weight: 800;
+    width: 300px;
 }
 
 #see-more {
