@@ -10,9 +10,25 @@
     padding: 0.5em;
     width: fit-content;
     height: auto;
+    transition: all 100ms ease;
+    border-radius: 50%;
 }
 
 .backtotop:hover {
     box-shadow: 0.25em 0.25em 0.25em rgb(105, 105, 105);
     padding: 0.6em;
+}
+
+@media (max-width: 1024px){
+    .backtotop{
+        width: 70px;
+        height: 70px;
+        margin-right: -15px;
+        margin-bottom: -10px;
+    }
+
+    .backtotop:hover {
+        box-shadow: initial;
+        padding: initial;
+    }
 }
