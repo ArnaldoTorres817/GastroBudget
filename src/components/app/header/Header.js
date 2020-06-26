@@ -3,7 +3,7 @@ import './Header.css'
 
 const Header = () =>
     <header>
-        <h1 id="title">GastroBudget</h1>
+        <h1><a href="/" id="title">GastroBudget</a></h1>
     </header>
 
 export default Header 
