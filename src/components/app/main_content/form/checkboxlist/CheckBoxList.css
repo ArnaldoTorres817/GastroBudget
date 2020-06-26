@@ -15,6 +15,7 @@
     padding-right: 1.5em;
     padding-bottom: 0.4em;
     padding-left: 0.5em;
+    width: 215px;
 }
 
 .checkboxlist {
@@ -22,7 +23,11 @@
     z-index: 1;
     border: 1px solid #CCC;
     background-color: white;
-    width: inherit;
+    padding-top: 0.4em;
+    padding-right: 1.5em;
+    padding-bottom: 0.4em;
+    padding-left: 0.5em;
+    width: 215px;
 }
 
 .check-item {
@@ -38,12 +43,34 @@
     color: white;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1024px) {
+    
     .checkbox-button {
+        width: fit-content;
+        margin-top: 0.5em;
+        text-align: center;
+        
+    }
+    .checkboxlist {
+        /* padding-right: 1.1em;
+        width: 90%; */
+        width: 219px;
+        
+    }
+    .check-item:hover{
+        background-color: initial;
+        color: black;
+    }
+}
+
+@media screen and (max-width: 661px){
+    .checkbox-button {
+        width: 300px;
         margin-top: 0.5em;
     }
     .checkboxlist {
-        padding-right: 1.1em;
-        width: 90%;
+        /* padding-right: 1.1em;
+        width: 90%; */
+        width: 300px;
     }
 }
