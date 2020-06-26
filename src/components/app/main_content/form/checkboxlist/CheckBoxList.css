@@ -28,23 +28,46 @@
     padding-bottom: 0.4em;
     padding-left: 0.5em;
     width: 215px;
+    height: 250px;
+    overflow: scroll;
+    /* overflow-x: hidden;  */
 }
+
+.checkboxlist::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.checkboxlist::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.checkboxlist::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+.checkboxlist::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
 
 .check-item {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    font-size: small;
+    padding-right: 0.5em;
+    font-size: 0.8em;
 }
+
 
 .check-item:hover {
     display: inline-block;
     background-color: var(--primary-color);
-    width: 100%;
+    width: fit-content;
     color: white;
 }
 
 @media (max-width: 1024px) {
-    
     .checkbox-button {
         width: fit-content;
         margin-top: 0.5em;
