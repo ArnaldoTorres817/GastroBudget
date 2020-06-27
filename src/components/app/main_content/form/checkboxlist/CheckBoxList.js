@@ -1,45 +1,58 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './CheckBoxList.css'
 
 
 const CheckBoxList = (props) => {
 
-    const [visibleList, setVisibleList] = useState(false)
+    const [display, setDisplay] = useState('none')
+    const [open, setOpen] = useState(false)
     const {
         options,
         onChange
     } = props
 
-    useEffect(() => { document.body.addEventListener('click', () => setVisibleList(false)) })
+    const ref = useRef(null);
 
+    const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+            setDisplay('none');
+            setOpen(false)
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside, false);
+        return () => {
+            document.removeEventListener('click', handleClickOutside, false);
+        }
+    }, [ref])
+
+    const handleClick = () => {
+        console.log(open)
+        if (open) {
+            setOpen(false)
+            setDisplay('none')
+        } else {
+            setOpen(true)
+            setDisplay('initial')
+        }
+    }
 
     return (
-
-        <div id="checkbox-container">
-            <div className='checkbox-button' onClick={() => setVisibleList(!visibleList)}>&nbsp;&nbsp;&nbsp;&nbsp;-- &nbsp;Select cuisine types&nbsp; --&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <div className='checkboxlist' style={visibleList ? { display: "initial" } : { display: "none" }}>
-                <div className="check-item">
+        <div ref={ref} id="checkbox-container">
+            <div className='checkbox-button' onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;-- &nbsp;Select cuisine types&nbsp; --&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div className='checkboxlist' style={{ display }}>
+                <label htmlFor="all" className="check-item">
                     <input type='checkbox' id="all" name="all" onChange={onChange} />
-                    <label htmlFor="all">&nbsp;&nbsp;Select All</label>
-                </div>
-
-
+                    Select All
+                </label>
                 {options
-                    .map(item => {
-                        const {
-                            name,
-                            value,
-                            labelText,
-                            checked,
-                        } = item
-
-                        return (
-                            <div className="check-item" key={name}>
-                                <input id={name} name={name} type='checkbox' value={value} onChange={onChange} checked={checked} />
-                                <label htmlFor={name}>&nbsp;&nbsp;{labelText}</label>
-                            </div>
-                        )
-                    })
+                    .map(({ name, value, labelText, checked }) =>
+                        <label key={name} htmlFor={name} className="check-item">
+                            <input id={name} name={name} type='checkbox' value={value} onChange={onChange} checked={checked} />
+                            {labelText}
+                        </label>
+                    )
                 }
             </div>
 
