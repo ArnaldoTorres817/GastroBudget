@@ -9,6 +9,7 @@ const Form = (props) => {
     const [categories, setCategories] = useState('')
     const [price, setPrice] = useState(1)
     const [location, setLocation] = useState('')
+    const [cuisinesSelected,setCuisinesSelected] = useState(0)
     const [options, setOptions] = useState(
         [
             { name: 'bakeries', labelText: 'Bakeries', value: 'bakeries', checked: false },
@@ -45,14 +46,18 @@ const Form = (props) => {
 
     const updateCategories = () => {
         let updatedCategories = ''
-        options
-            .filter(isChecked)
-            .forEach(item =>
-                updatedCategories += item.value + ','
-            )
+        const categoriesChecked = options.filter(isChecked)
+        setCuisinesSelected(categoriesChecked.length)
+        categoriesChecked.forEach(item =>
+            updatedCategories += item.value + ','
+        )
         updatedCategories = updatedCategories.slice(0, updatedCategories.length - 1)
         setCategories(updatedCategories)
     }
+
+
+    //Number of cuisines
+    const numCuisines = options.length
 
 
     const handleChange = e => {
@@ -62,11 +67,13 @@ const Form = (props) => {
             if (e.target.checked) {
                 updatedOptions = options.map(item => {
                     item.checked = true
+                    setCuisinesSelected(numCuisines)
                     return item
                 })
             } else {
                 updatedOptions = options.map(item => {
                     item.checked = false
+                    setCuisinesSelected(0)
                     return item
                 })
             }
@@ -95,7 +102,8 @@ const Form = (props) => {
             <label className="form-label" htmlFor="cuisine">Cuisines&nbsp;&nbsp;</label>
             <CheckBoxList
                 options={options}
-                onChange={handleChange} />
+                onChange={handleChange}
+                cuisinesSelected={cuisinesSelected} />
             <label className="form-label" htmlFor="budget">Budget</label>
             <select
                 value={price}

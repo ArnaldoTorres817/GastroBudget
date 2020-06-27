@@ -5,6 +5,8 @@ import './CheckBoxList.css'
 const CheckBoxList = (props) => {
 
     const [display, setDisplay] = useState('none')
+
+
     const [open, setOpen] = useState(false)
     const {
         options,
@@ -41,7 +43,7 @@ const CheckBoxList = (props) => {
 
     return (
         <div ref={ref} id="checkbox-container">
-            <div className='checkbox-button' onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;-- &nbsp;Select cuisine types&nbsp; --&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div className='checkbox-button' onClick={handleClick}>&nbsp;&nbsp;&nbsp;&nbsp;-- &nbsp;{(props.cuisinesSelected>0) ?  `${props.cuisinesSelected} Selected`:"Select cuisine types"}&nbsp; --&nbsp;&nbsp;&nbsp;&nbsp;</div>
             <div className='checkboxlist' style={{ display }}>
                 <label htmlFor="all" className="check-item">
                     <input type='checkbox' id="all" name="all" onChange={onChange} />
