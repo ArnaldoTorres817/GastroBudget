@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './CheckBoxList.css'
 
 
@@ -10,7 +10,11 @@ const CheckBoxList = (props) => {
         onChange
     } = props
 
+    useEffect(() => { document.body.addEventListener('click', () => setVisibleList(false)) })
+
+
     return (
+
         <div id="checkbox-container">
             <div className='checkbox-button' onClick={() => setVisibleList(!visibleList)}>&nbsp;&nbsp;&nbsp;&nbsp;-- &nbsp;Select cuisine types&nbsp; --&nbsp;&nbsp;&nbsp;&nbsp;</div>
             <div className='checkboxlist' style={visibleList ? { display: "initial" } : { display: "none" }}>
@@ -40,6 +44,8 @@ const CheckBoxList = (props) => {
             </div>
 
         </div>
+
+
     )
 }
 

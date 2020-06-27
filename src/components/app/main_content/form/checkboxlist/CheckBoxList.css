@@ -67,6 +67,7 @@
     color: white;
 }
 
+
 @media (max-width: 1024px) {
     .checkbox-button {
         width: fit-content;
