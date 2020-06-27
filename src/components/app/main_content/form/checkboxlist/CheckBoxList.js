@@ -22,8 +22,10 @@ const CheckBoxList = (props) => {
 
     useEffect(() => {
         document.addEventListener('click', handleClickOutside, false);
+        document.documentElement.addEventListener('click', handleClickOutside, false);
         return () => {
             document.removeEventListener('click', handleClickOutside, false);
+            document.documentElement.removeEventListener('click', handleClickOutside, false);
         }
     }, [ref])
 
