@@ -65,8 +65,10 @@
     align-items: center;
 }
 
-.check-item:not(:first-of-type) {
-    margin-top: 1em;
+.check-item {
+    /* padding-bottom: 0.5em;
+    padding-top: 0.5em; */
+    padding: 0.5em;
 }
 
 .check-item:hover {
