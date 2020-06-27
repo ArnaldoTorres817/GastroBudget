@@ -56,21 +56,22 @@
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     padding-right: 0.5em;
-    font-size: 0.8em;
+    width: max-content;
+    font-size: 16px;
 }
 
 
 .check-item:hover {
     display: inline-block;
     background-color: var(--primary-color);
-    width: fit-content;
+    width: max-content;
     color: white;
 }
 
 
 @media (max-width: 1024px) {
     .checkbox-button {
-        width: fit-content;
+        width: max-content;
         margin-top: 0.5em;
         text-align: center;
         
