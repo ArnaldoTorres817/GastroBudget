@@ -30,7 +30,7 @@
     width: 215px;
     height: 250px;
     overflow: scroll;
-    /* overflow-x: hidden;  */
+    overflow-x: hidden;
 }
 
 .checkboxlist::-webkit-scrollbar {
