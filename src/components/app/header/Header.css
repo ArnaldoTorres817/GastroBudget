@@ -1,0 +1,18 @@
+header {
+    margin: 0;
+    background-color: var(--primary-color);
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: white;
+}
+header a{
+    text-decoration: none;
+    width: min-content;
+    
+}
+
+#title{
+    margin: 0;
+    color: white;
+    text-decoration: none;
+}

@@ -1,13 +1,13 @@
 .loader {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid var(--primary-color);
-    border-radius: 50%;
-    width: 75px;
-    height: 75px;
     animation: spin 2s linear infinite;
-    margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
+    margin-left: auto;
+    border: 1em solid #f3f3f3;
+    border-top: 1em solid var(--primary-color);
+    border-radius: 50%;
+    width: 4.5em;
+    height: 4.5em;
 }
 
 @keyframes spin {

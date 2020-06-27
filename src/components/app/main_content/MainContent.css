@@ -1,0 +1,11 @@
+main {
+    padding-bottom: var(--footer-height);
+    overflow: auto;
+}
+
+@media screen and (max-width: 479px) {
+    main {
+        padding-right: 0.5em;
+        padding-left: 0.5em;
+    }
+}
