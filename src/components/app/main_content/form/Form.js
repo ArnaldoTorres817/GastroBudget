@@ -3,6 +3,7 @@ import AlgoliaPlaces from 'algolia-places-react'
 import './Form.css'
 import CheckBoxList from './checkboxlist/CheckBoxList'
 
+//Form Component
 const Form = (props) => {
     const { onRequest } = props
 
