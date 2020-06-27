@@ -92,11 +92,11 @@ const Form = (props) => {
 
     return (
         <form id="form" onSubmit={handleSubmit}>
-            <label htmlFor="cuisine">Cuisines&nbsp;&nbsp;</label>
+            <label className="form-label" htmlFor="cuisine">Cuisines&nbsp;&nbsp;</label>
             <CheckBoxList
                 options={options}
                 onChange={handleChange} />
-            <label htmlFor="budget">Budget</label>
+            <label className="form-label" htmlFor="budget">Budget</label>
             <select
                 value={price}
                 name="budget"
@@ -110,7 +110,7 @@ const Form = (props) => {
                 <option value={4}>Very High ($$$$)</option>
             </select>
 
-            <label htmlFor="location-text">Location</label>
+            <label className="form-label" htmlFor="location-text">Location</label>
 
             <AlgoliaPlaces
                 placeholder='Write an address here'

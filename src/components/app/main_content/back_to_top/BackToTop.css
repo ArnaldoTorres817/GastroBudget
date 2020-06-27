@@ -8,8 +8,8 @@
     background-color: whitesmoke;
     cursor: pointer;
     padding: 0.5em;
-    width: fit-content;
-    height: auto;
+    width: 60px;
+    height: 60px;
     transition: all 100ms ease;
     border-radius: 50%;
 }

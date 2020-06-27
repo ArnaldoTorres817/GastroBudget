@@ -28,7 +28,6 @@ const CheckBoxList = (props) => {
     }, [ref])
 
     const handleClick = () => {
-        console.log(open)
         if (open) {
             setOpen(false)
             setDisplay('none')
