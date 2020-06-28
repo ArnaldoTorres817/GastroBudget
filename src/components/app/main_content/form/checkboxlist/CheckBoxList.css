@@ -1,8 +1,9 @@
-#checkbox-container {
-    box-sizing: border-box;
+.checkbox-container {
+    position: relative;
 }
 
 .checkbox-button {
+    box-sizing: border-box;
     border: 1px solid #CCC;
     border-radius: 3px;
     appearance: none;
@@ -11,53 +12,43 @@
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 5px;
-    padding-top: 0.4em;
-    padding-right: 1.5em;
-    padding-bottom: 0.4em;
+    width: 100%;
+    height: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     padding-left: 0.5em;
-    width: 300px;
 }
 
-.checkboxlist {
+.checkbox-list {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     position: absolute;
     z-index: 1;
     border: 1px solid #CCC;
     background-color: white;
-    padding-top: 0.4em;
-    padding-right: 1.5em;
-    padding-bottom: 0.4em;
-    padding-left: 0.5em;
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: 300px;
     height: 250px;
-    overflow: scroll;
-    overflow-x: hidden;
 }
 
-.checkboxlist::-webkit-scrollbar {
+.checkbox-list::-webkit-scrollbar {
     -webkit-appearance: none;
 }
 
-.checkboxlist::-webkit-scrollbar:vertical {
+.checkbox-list::-webkit-scrollbar:vertical {
     width: 11px;
 }
 
-.checkboxlist::-webkit-scrollbar:horizontal {
-    height: 11px;
-}
-
-.checkboxlist::-webkit-scrollbar-thumb {
+.checkbox-list::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    border: 2px solid white; /* should match background, can't be transparent */
+    border: 2px solid white;
+    /* should match background, can't be transparent */
     background-color: rgba(0, 0, 0, .5);
 }
 
-
 .check-item {
-    /* padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-right: 0.5em; */
     width: 100%;
     font-size: 16px;
     display: block;
@@ -66,8 +57,6 @@
 }
 
 .check-item {
-    /* padding-bottom: 0.5em;
-    padding-top: 0.5em; */
     padding: 0.5em;
 }
 
@@ -81,32 +70,8 @@
 }
 
 @media (max-width: 1024px) {
-    .checkbox-button {
-        width: max-content;
-        margin-top: 0.5em;
-        text-align: center;
-        
-    }
-    .checkboxlist {
-        /* padding-right: 1.1em;
-        width: 90%; */
-        width: 219px;
-        
-    }
-    .check-item:hover{
+    .check-item:hover {
         background-color: initial;
         color: black;
-    }
-}
-
-@media screen and (max-width: 661px){
-    .checkbox-button {
-        width: 300px;
-        margin-top: 0.5em;
-    }
-    .checkboxlist {
-        /* padding-right: 1.1em;
-        width: 90%; */
-        width: 300px;
     }
 }

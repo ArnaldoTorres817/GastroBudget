@@ -10,7 +10,7 @@ const Form = (props) => {
     const [categories, setCategories] = useState('')
     const [price, setPrice] = useState(1)
     const [location, setLocation] = useState('')
-    const [cuisinesSelected,setCuisinesSelected] = useState(0)
+    const [cuisinesSelected, setCuisinesSelected] = useState(0)
     const [options, setOptions] = useState(
         [
             { name: 'bakeries', labelText: 'Bakeries', value: 'bakeries', checked: false },
@@ -57,9 +57,8 @@ const Form = (props) => {
     }
 
 
-    //Number of cuisines
+    // Number of cuisines
     const numCuisines = options.length
-
 
     const handleChange = e => {
         const name = e.target.name
@@ -80,11 +79,10 @@ const Form = (props) => {
             }
         }
         else {
-            updatedOptions = options.map(isMatched(name)) 
+            updatedOptions = options.map(isMatched(name))
         }
         setOptions(updatedOptions)
         updateCategories()
-
     }
 
 
@@ -99,53 +97,60 @@ const Form = (props) => {
     }
 
     return (
-        <form id="form" onSubmit={handleSubmit}>
-            <label className="form-label" htmlFor="cuisine">Cuisines&nbsp;&nbsp;</label>
-            <CheckBoxList
-                options={options}
-                onChange={handleChange}
-                cuisinesSelected={cuisinesSelected} />
-            <label className="form-label" htmlFor="budget">Budget</label>
-            <select
-                value={price}
-                name="budget"
-                className="form-select"
-                id="budget"
-                onChange={e => setPrice(e.target.value)}
-            >
-                <option value={1}>Low($)</option>
-                <option value={2}>Medium ($$)</option>
-                <option value={3}>High ($$$)</option>
-                <option value={4}>Very High ($$$$)</option>
-            </select>
+        <form onSubmit={handleSubmit}>
+            <div className="form-control">
+                <label className="form-label" htmlFor="cuisine">Cuisines</label>
+                <CheckBoxList
+                    options={options}
+                    onChange={handleChange}
+                    cuisinesSelected={cuisinesSelected}
+                />
+            </div>
+            <div className="form-control">
+                <label className="form-label" htmlFor="budget">Budget</label>
+                <select
+                    value={price}
+                    name="budget"
+                    className="form-select"
+                    id="budget"
+                    onChange={e => setPrice(e.target.value)}
+                >
+                    <option value={1}>Low($)</option>
+                    <option value={2}>Medium ($$)</option>
+                    <option value={3}>High ($$$)</option>
+                    <option value={4}>Very High ($$$$)</option>
+                </select>
+            </div>
 
-            <label className="form-label" htmlFor="location-text">City and State</label>
+            <div className="form-control">
+                <label className="form-label" htmlFor="ap-input">City and State</label>
 
-            <AlgoliaPlaces
-                placeholder='Write an address here'
+                <AlgoliaPlaces
+                    placeholder='Write an address here'
 
-                options={{
-                    appId: process.env.REACT_APP_ALGOLIA_ID,
-                    apiKey: process.env.REACT_APP_ALGOLIA_API_KEY,
-                    language: 'en',
-                    countries: ['us', 'pr'],
-                    type: 'city',
-                    useDeviceLocation: false
-                }}
-                onChange={({ suggestion }) =>
-                    setLocation(suggestion.name + ',' + suggestion.country)}
+                    options={{
+                        appId: process.env.REACT_APP_ALGOLIA_ID,
+                        apiKey: process.env.REACT_APP_ALGOLIA_API_KEY,
+                        language: 'en',
+                        countries: ['us', 'pr'],
+                        type: 'city',
+                        useDeviceLocation: false,
+                    }}
+                    onChange={({ suggestion }) =>
+                        setLocation(suggestion.name + ',' + suggestion.country)}
 
-                onSuggestions={({ query }) =>
-                    setLocation(query)}
+                    onSuggestions={({ query }) =>
+                        setLocation(query)}
 
-                onClear={() =>
-                    setLocation('')}
-            />
+                    onClear={() =>
+                        setLocation('')}
+                />
+            </div>
             <div className="flex-break"></div>
             <input
                 type='submit'
                 value='Search'
-                id='search-button'
+                id='search'
             />
         </form>
     )
