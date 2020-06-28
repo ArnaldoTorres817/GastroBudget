@@ -43,7 +43,7 @@ const CheckBoxList = (props) => {
 
     return (
         <div ref={ref} id="checkbox-container">
-            <div className='checkbox-button' onClick={handleClick}>{(props.cuisinesSelected > 0) ? `${props.cuisinesSelected} Selected` : "Select cuisine types"}</div>
+            <div className='checkbox-button' onClick={handleClick}>{(props.cuisinesSelected > 0) ? `${props.cuisinesSelected} Selected` : "-- Select cuisine types --"}</div>
             <div id="cuisine" className='checkbox-list' style={{ display }}>
                 <label htmlFor="all" className="check-item">
                     <input type='checkbox' id="all" name="all" onChange={onChange} />
