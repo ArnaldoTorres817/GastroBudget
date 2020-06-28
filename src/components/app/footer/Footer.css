@@ -9,7 +9,7 @@ footer {
     justify-content: space-around;
     -webkit-justify-content: space-around;
     background-color: var(--primary-color);
-    padding: 1em 0;
+    padding: 1em;
     width: 100%;
     height: var(--footer-height);
     text-align: center;

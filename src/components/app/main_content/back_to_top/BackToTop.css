@@ -21,10 +21,10 @@
 
 @media (max-width: 1024px){
     .backtotop{
-        width: 70px;
-        height: 70px;
-        margin-right: -15px;
+        margin-right: -10px;
         margin-bottom: -10px;
+        width: 60px;
+        height: 60px;
     }
 
     .backtotop:hover {
