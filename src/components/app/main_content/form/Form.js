@@ -119,7 +119,7 @@ const Form = (props) => {
                 <option value={4}>Very High ($$$$)</option>
             </select>
 
-            <label className="form-label" htmlFor="location-text">Location</label>
+            <label className="form-label" htmlFor="location-text">City and State</label>
 
             <AlgoliaPlaces
                 placeholder='Write an address here'
